@@ -20,5 +20,6 @@ class UsersTableSeeder extends Seeder
         DB::table("users")->insert(["name"=>"julio",
           "email"=>"julio@gmail.com",
           "password"=>"5678"]);
+
     }
 }

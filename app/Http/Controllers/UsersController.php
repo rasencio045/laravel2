@@ -14,4 +14,18 @@ class UsersController extends Controller
     public function show (User $user){
       return view('users.show', ['users'=>$user]);
     }
+
+    public function create (){
+      return view ('users.create');
+    }
+
+    public function store (){
+      $usuario = new \App\User;
+      $usuario->name = request('name');
+      $usuario->email = request('email');
+      $usuario->password = request('password');
+      $usuario.save();
+
+      return redirect('/');
+    }
 }
