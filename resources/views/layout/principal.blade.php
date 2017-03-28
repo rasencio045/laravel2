@@ -8,6 +8,7 @@
       @include ('layout.nav')
       @yield('contenido')
       @yield('contenido2')
+      @include('layout.errores')
       @include('layout.footer')
   </body>
 </html>

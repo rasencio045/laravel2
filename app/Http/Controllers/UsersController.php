@@ -20,11 +20,15 @@ class UsersController extends Controller
     }
 
     public function store (){
+      $this->validate(request(),['name'=>'required',
+      'email'=>'required|email',
+      'password'=>'required|min:4']);
+
       $usuario = new \App\User;
       $usuario->name = request('name');
       $usuario->email = request('email');
       $usuario->password = request('password');
-      $usuario.save();
+      $usuario->save();
 
       return redirect('/');
     }
