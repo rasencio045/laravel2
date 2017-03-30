@@ -22,7 +22,9 @@ Route::get('/Post', "PostController@index");
 Route::get('/Post/create', "PostController@create");
 Route::post('/Post/create', "PostController@store");
 
+Route::post('/Post/{post}/comment', "CommentController@store");
 Route::get('/Post/{post}', "PostController@show");
+
 
 Route::get('/registro', "UsersController@create");
 Route::post('/registro', "UsersController@store");
